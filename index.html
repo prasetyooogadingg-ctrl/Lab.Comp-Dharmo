@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS CYBER CAFE | Gaming & Reservasi PC</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">NEXUS<span>CAFE</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#specs">Spesifikasi</a></li>
+            <li><a href="#status-pc">Status PC</a></li>
+            <li><a href="#reservasi" class="btn-nav">Booking Sekarang</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Page (Hero Section) -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>LEVEL UP YOUR <span>GAMING</span> EXPERIENCE</h1>
+            <p>Koneksi fiber optik ultra-cepat, monitor 240Hz, dan kursi ergonomis. Cek ketersediaan PC secara langsung dan amankan tempatmu sebelum berangkat!</p>
+            <div class="hero-buttons">
+                <a href="#status-pc" class="btn-primary">Cek PC Kosong</a>
+                <a href="#reservasi" class="btn-secondary">Reservasi Online</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Spesifikasi & Paket -->
+    <section id="specs" class="section">
+        <h2 class="section-title">ZONA & <span>SPESIFIKASI</span></h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>ZONA REGULER</h3>
+                <p class="price">Rp 6.000 <span>/ jam</span></p>
+                <ul>
+                    <li>Intel Core i5 Gen-13</li>
+                    <li>NVIDIA RTX 3060 12GB</li>
+                    <li>RAM 16GB DDR4</li>
+                    <li>Monitor 165Hz 24 Inch</li>
+                </ul>
+            </div>
+            <div class="card vip">
+                <div class="badge">TERPOPULER</div>
+                <h3>ZONA VIP / ESPORTS</h3>
+                <p class="price">Rp 10.000 <span>/ jam</span></p>
+                <ul>
+                    <li>Intel Core i7 Gen-14</li>
+                    <li>NVIDIA RTX 4070 Super</li>
+                    <li>RAM 32GB DDR5</li>
+                    <li>Monitor Zowie 240Hz + Ruangan AC Privat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indikator Status Komputer -->
+    <section id="status-pc" class="section bg-darker">
+        <h2 class="section-title">STATUS KOMPUTER <span>LIVE</span></h2>
+        <p class="section-subtitle">Klik pada PC yang kosong untuk langsung memilihnya di form reservasi. (Simulasi: Klik tombol Admin di bawah untuk mengubah status manual).</p>
+        
+        <div class="legend">
+            <span class="legend-item"><i class="dot available"></i> Kosong (Tersedia)</span>
+            <span class="legend-item"><i class="dot occupied"></i> Terpakai</span>
+            <span class="legend-item"><i class="dot booked"></i> Direservasi</span>
+        </div>
+
+        <div class="pc-grid" id="pcGrid">
+            <!-- Daftar PC akan di-generate otomatis oleh JavaScript -->
+        </div>
+
+        <div class="admin-panel">
+            <small>Mode Operator/Server: </small>
+            <button onclick="resetAllPC()" class="btn-reset">Reset Semua PC ke Kosong</button>
+        </div>
+    </section>
+
+    <!-- Form Reservasi Pelanggan -->
+    <section id="reservasi" class="section">
+        <h2 class="section-title">FORM <span>RESERVASI</span></h2>
+        <div class="reservation-wrapper">
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="nama">Nama / Nickname Pelanggan</label>
+                    <input type="text" id="nama" placeholder="Contoh: Budi_ProPlayer" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">Nomor WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="0812xxxxxxxx" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pilihPC">Pilih Nomor PC</label>
+                        <select id="pilihPC" required>
+                            <!-- Opsi PC kosong diisi otomatis oleh JS -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="durasi">Durasi Main (Jam)</label>
+                        <input type="number" id="durasi" min="1" max="12" value="2" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jamMain">Jam Kedatangan</label>
+                    <input type="time" id="jamMain" required>
+                </div>
+
+                <button type="submit" class="btn-primary w-100">Konfirmasi Reservasi</button>
+            </form>
+
+            <!-- Daftar Antrean / Reservasi Aktif -->
+            <div class="booking-list">
+                <h3>Daftar Reservasi Aktif</h3>
+                <ul id="activeBookings">
+                    <!-- List reservasi muncul di sini -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nexus Cyber Cafe. Dikelola dengan GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
