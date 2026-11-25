@@ -1,4 +1,4 @@
-# 🖥️ NEXUS CYBER CAFE - Web Server & Sistem Reservasi Warnet
+# 🖥️Lab Computer - Web Server & Sistem Reservasi Warnet
 
 Website informasi, pemantauan status komputer (*live indicator*), dan reservasi billing warnet berbasis web statis yang dapat di-hosting langsung menggunakan **GitHub Pages**.
 
